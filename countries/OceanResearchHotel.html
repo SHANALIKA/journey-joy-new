@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Page</title>
+    <link rel="stylesheet" href="AllHotels.css">
+</head>
+<body>
+    <!-- Header Section -->
+	<header>
+      <div class="hero">
+            <h1>Welcome to Ocean Research Hotel</h1>
+            <a href="#booking" class="btn">Book Now</a>
+        </div>
+    </header>
+	
+	<!-- Rooms Section -->
+    <section class="rooms">
+		<br></br>
+		<div class="room">
+            <img src="https://masdmediterraneo.com/wp-content/uploads/2018/02/HotelMasd_1366retocada-1024x684.jpg" alt="Normal Room">
+            <h3>Normal Room</h3>
+            <p>Comfortable single room with a queen bed and pool view.</p>
+            <p>Price: $100 per night</p>
+        </div>
+        <div class="room">
+            <img src="https://www.utours.am/webroot/myfiles/images/hotels/Kipros/Mercure%20Larnaca%20Beach%20Resort/Standard%20Double%20Room%20with%20Balcony%20and%20Sea%20View/3.jpg" alt="Standard Room">
+            <h3>Standard Room</h3>
+            <p>Comfortable and cozy room with a queen bed and garden view.</p>
+            <p>Price: $120 per night</p>
+        </div>
+        <div class="room">
+            <img src="https://anthemussea.gr/wp-content/uploads/2018/03/anthemus_sea-deluxe_suites-05-0156-1-1024x683-1.jpg" alt="Deluxe Room">
+            <h3>Deluxe Room</h3>
+            <p>Spacious room with a king bed and ocean view balcony.</p>
+            <p>Price: $180 per night</p>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="booking-section">
+        <h2>Check Availability</h2>
+        <form id="bookingForm">
+            <label for="checkin">Check-in:</label>
+            <input type="date" id="checkin" required>
+
+            <label for="checkout">Check-out:</label>
+            <input type="date" id="checkout" required>
+
+            <label for="guests">Guests:</label>
+            <select id="guests">
+                <option value="1">1 Guest</option>
+                <option value="2">2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+            </select>
+            <br></br>
+            <button type="submit" class="btn">Check Availability</button>
+        </form>
+        <p id="availabilityMessage"></p>
+    </section>
+
+    <!-- Hotel Overview Section -->
+    <section class="overview">
+        <h2>Ocean Research Hotel Facilities</h2>
+        <p>Experience luxury and comfort at Ocean View Hotel, situated on the beautiful shores of the Atlantic Ocean. We offer modern rooms, gourmet dining, and world-class amenities for a relaxing stay.</p>
+        <div class="amenities">
+            <h3>Our Hotel Provide</h3>
+            <ul>
+                <li>Free Wi-Fi</li>
+                <li>Swimming Pool</li>
+                <li>Fitness Center</li>
+                <li>Restaurant & Bar</li>
+                <li>Beach Access</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews">
+        <h2>Guest Reviews</h2>
+        <div class="review">
+            <p>"Amazing stay! The view was breathtaking and the service top-notch." – Ketty Handoson</p>
+        </div>
+        <div class="review">
+            <p>"Loved the beach access and pool area. Will definitely return!" – John Mackrdrew</p>
+        </div>
+    </section>
+
+    
+	 <!-- Back Button Section -->
+    <section class="back-button-section">
+		<a href="file:///C:/Users/Thenali%20manathunga/Desktop/Hotels.html" class="back-btn" target="_blank">Back To Hotels Page</a>
+    </section>
+	
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section about">
+          <h2>About Journey Joy</h2>
+          <p>
+            Discover new horizons, embrace thrilling experiences, and create
+            unforgettable memories with Journey Joy. Your next great escape
+            awaits—let’s explore the world together!
+          </p>
+        </div>
+
+        <div class="footer-section links">
+          <h2>Quick Links</h2>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Restaurant</a></li>
+            <li><a href="#">Hotel</a></li>
+            <li><a href="#">Transport</a></li>
+            <li><a href="#">Countries</a></li>
+            <li><a href="#">Event</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section contact">
+          <h2>Contact Us</h2>
+          <p>Email: info@journeyjoy.com</p>
+          <p>Phone: +123 123 7890</p>
+          <p>Address: 123 Kandy Road, Colombo</p>
+        </div>
+
+        <div class="footer-section social">
+          <h2>Follow Us</h2>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+        <div class="footer-bottom">
+        <p>&copy; 2024 Journey Joy. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js">
+	// Booking form submission
+document.getElementById('bookingForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const checkin = document.getElementById('checkin').value;
+    const checkout = document.getElementById('checkout').value;
+    const guests = document.getElementById('guests').value;
+
+    // Simple validation
+    if (checkin === '' || checkout === '') {
+        alert('Please select check-in and check-out dates');
+    } else {
+        document.getElementById('availabilityMessage').innerText = `Available rooms for ${guests} guests from ${checkin} to ${checkout}.`;
+    }
+});
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Journey Joy - Restaurant Booking</title>
+    <link rel="stylesheet" href="style1.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <style>
+      /* Restaurant booking form styles */
+      .booking-container {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        margin: 20px auto;
+        width: 90%;
+        max-width: 600px;
+        padding: 30px;
+        text-align: left;
+      }
+
+      .slideshow-container {
+        position: relative;
+        width: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+        height: 300px;
+      }
+
+      .slideshow-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: none;
+      }
+
+      .active {
+        display: block;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 16px;
+      }
+
+      .form-group input,
+      .form-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+
+      .submit-button {
+        display: inline-block;
+        padding: 12px 20px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-size: 16px;
+        width: 100%;
+        text-align: center;
+      }
+
+      .submit-button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <h1>Journey Joy</h1>
+          <form action="book.php" method="POST">
+            <button type="submit" name="create_table" class="submit-button">Create Table</button>
+        </form>
+        </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="resturant.html">Restaurant</a></li>
+            <li><a href="Hotel Main Page.html">Hotel</a></li>
+
+            <li><a href="Transport Page [html].html">Transport</a></li>
+            <li><a href="country.html">Countries</a></li>
+
+          </ul>
+        </nav>
+        <a href="#" class="cta-btn">Book Now</a>
+        <div class="menu-toggle" id="mobile-menu">
+          <i class="fa fa-bars"></i>
+        </div>
+      </div>
+    </header>
+
+    <!-- Restaurant Booking Form -->
+    <div class="booking-container">
+      <div class="slideshow-container">
+        <img
+          src="resturant1.avif"
+          class="slideshow-image active"
+          alt="Restaurant 1"
+        />
+        <img src="resturant2.avif" class="slideshow-image" alt="Restaurant 2" />
+        <img src="resturant3.avif" class="slideshow-image" alt="Restaurant 3" />
+      </div>
+      <form action="book.php" method="POST" id="bookingForm">
+        <input type="hidden" name="restaurant_id" value="1" />
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="date">Date:</label>
+          <input type="date" id="date" name="date" required />
+        </div>
+        <div class="form-group">
+          <label for="time">Time:</label>
+          <input type="time" id="time" name="time" required />
+        </div>
+        <div class="form-group">
+          <label for="guests">Number of Guests:</label>
+          <input
+            type="number"
+            id="guests"
+            name="guests"
+            required
+            min="1"
+            max="20"
+          />
+        </div>
+        <button type="submit" class="submit-button">Book Now</button>
+      </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section about">
+          <h2>About Journey Joy</h2>
+          <p>
+            Discover new horizons, embrace thrilling experiences, and create
+            unforgettable memories with Journey Joy. Your next great escape
+            awaits—let’s explore the world together!
+          </p>
+        </div>
+
+        <div class="footer-section links">
+          <h2>Quick Links</h2>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="resturant.html">Restaurant</a></li>
+            <li><a href="Hotel Main Page.html">Hotel</a></li>
+
+            <li><a href="Transport Page [html].html">Transport</a></li>
+            <li><a href="country.html">Countries</a></li>
+
+          </ul>
+        </div>
+
+        <div class="footer-section contact">
+          <h2>Contact Us</h2>
+          <p>Email: info@journeyjoy.com</p>
+          <p>Phone: +123 123 7890</p>
+          <p>Address: 123 Kandy Road, Colombo</p>
+        </div>
+
+        <div class="footer-section social">
+          <h2>Follow Us</h2>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Journey Joy. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- JavaScript for slideshow and menu -->
+    <script>
+      // Slideshow functionality
+      let slideIndex = 0;
+      const slides = document.querySelectorAll(".slideshow-image");
+
+      function showSlides() {
+        slides.forEach((slide, index) => {
+          slide.style.display = "none";
+        });
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 3000); // Change image every 3 seconds
+      }
+
+      showSlides();
+
+      // Mobile menu toggle
+      const menuToggle = document.getElementById("mobile-menu");
+      const navLinks = document.querySelector(".nav-links");
+      const overlay = document.querySelector(".overlay");
+
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        overlay.classList.toggle("active");
+      });
+
+      overlay.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        overlay.classList.remove("active");
+      });
+    </script>
+  </body>
+</html>

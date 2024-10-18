@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Journey Joy - Travel Website</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <h1>Journey Joy</h1>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="resturant.html">Restaurant</a></li>
+          <li><a href="Hotel Main Page.html">Hotel</a></li>
+          <li><a href="Transport Page [html].html">Transport</a></li>
+          <li><a href="country.html">Countries</a></li>
+        </ul>
+      </nav>
+      <a href="#" class="cta-btn">Book Now</a>
+      <div class="menu-toggle" id="mobile-menu">
+        <i class="fa fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- Overlay -->
+  <div class="overlay"></div>
+
+  <!-- Main Content -->
+  <main>
+    <div class="countries-container">
+      <h2>Popular Travel Destinations</h2>
+
+      <!-- Switzerland Form -->
+      <div class="country-card">
+        <img src="swizland.avif" alt="Switzerland" />
+        <h3>Switzerland</h3>
+        <p>
+          Explore the majestic Alps, pristine lakes, and beautiful cities like Zurich and Geneva.
+        </p>
+        <a href="countryform.html" class="btn">Learn More</a>
+      </div>
+
+      <!-- Australia Form -->
+      <div class="country-card">
+        <img src="australia.jpg" alt="Australia" />
+        <h3>Australia</h3>
+        <p>
+          Discover the Great Barrier Reef, Sydney Opera House, and the vast Outback.
+        </p>
+        <a href="countryform.html" class="btn">Learn More</a>
+      </div>
+
+      <!-- Thailand Form -->
+      <div class="country-card">
+        <img src="thailnd.jpeg" alt="Thailand" />
+        <h3>Thailand</h3>
+        <p>
+          Enjoy tropical beaches, vibrant markets, and the stunning temples of Thailand.
+        </p>
+        <a href="countryform.html" class="btn">Learn More</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section about">
+        <h2>About Journey Joy</h2>
+        <p>
+          Discover new horizons, embrace thrilling experiences, and create unforgettable memories with Journey Joy. Your next great escape awaits—let’s explore the world together!
+        </p>
+      </div>
+
+      <div class="footer-section links">
+        <h2>Quick Links</h2>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="resturant.html">Restaurant</a></li>
+          <li><a href="Hotel Main Page.html">Hotel</a></li>
+          <li><a href="Transport Page [html].html">Transport</a></li>
+          <li><a href="country.html">Countries</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section contact">
+        <h2>Contact Us</h2>
+        <p>Email: info@journeyjoy.com</p>
+        <p>Phone: +123 123 7890</p>
+        <p>Address: 123 Kandy Road, Colombo</p>
+      </div>
+
+      <div class="footer-section social">
+        <h2>Follow Us</h2>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Journey Joy. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for mobile menu toggle -->
+  <script>
+    const menuToggle = document.getElementById("mobile-menu");
+    const navLinks = document.querySelector(".nav-links");
+    const overlay = document.querySelector(".overlay");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+      overlay.classList.toggle("active");
+    });
+
+    overlay.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+      overlay.classList.remove("active");
+    });
+  </script>
+</body>
+</html>

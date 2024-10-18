@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport Page</title>
+    <link rel="stylesheet" href="Transport.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <h1>Journey Joy</h1>
+ <form action="transport.php" method="POST">
+            <button type="submit" name="create_table" class="submit-button">Create Table</button>
+        </form>
+        </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="resturant.html">Restaurant</a></li>
+            <li><a href="Hotel Main Page.html">Hotel</a></li>
+
+            <li><a href="Transport Page [html].html">Transport</a></li>
+            <li><a href="country.html">Countries</a></li>
+          </ul>
+        </nav>
+        <a href="#" class="cta-btn">Book Now</a>
+        <div class="menu-toggle" id="mobile-menu">
+          <i class="fa fa-bars"></i>
+        </div>
+      </div>
+    </header>
+
+    <!-- Search Form Section -->
+    <section class="search-form">
+        <h2>Search for Transportation</h2>
+        <form id="transportForm">
+
+            <label for="departureDate">Departure Date:</label>
+            <input type="date" id="departureDate" required>
+
+            <label for="returnDate">Return Date:</label>
+            <input type="date" id="returnDate" required>
+
+            <label for="passengers">Passengers:</label>
+            <select id="passengers">
+                <option value="1">1 Passenger</option>
+                <option value="2">2 Passengers</option>
+                <option value="3">3 Passengers</option>
+                <option value="4">4 Passengers</option>
+            </select>
+
+            <label for="transport-type">Transport Type:</label>
+            <select id="transport-type">
+                <option value="flight">Bicycle</option>
+				<option value="flight">Van</option>
+                <option value="car">Car</option>
+                <option value="bus">Motor Bike</option>
+                <option value="taxi">Taxi</option>
+            </select>
+
+            <button type="submit" class="btn">Search</button>
+        </form>
+
+        <p id="searchResult"></p>
+    </section>
+
+    <!-- Available Transport Options Section -->
+    <section class="transport-options">
+        <h2>Available Transport Options</h2>
+        <div id="results">
+            <!-- Transport options will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section about">
+          <h2>About Journey Joy</h2>
+          <p>
+            Discover new horizons, embrace thrilling experiences, and create
+            unforgettable memories with Journey Joy. Your next great escape
+            awaits—let’s explore the world together!
+          </p>
+        </div>
+
+        <div class="footer-section links">
+          <h2>Quick Links</h2>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="resturant.html">Restaurant</a></li>
+            <li><a href="Hotel Main Page.html">Hotel</a></li>
+
+            <li><a href="Transport Page [html].html">Transport</a></li>
+            <li><a href="country.html">Countries</a></li>
+
+          </ul>
+        </div>
+
+        <div class="footer-section contact">
+          <h2>Contact Us</h2>
+          <p>Email: info@journeyjoy.com</p>
+          <p>Phone: +123 123 7890</p>
+          <p>Address: 123 Kandy Road, Colombo</p>
+        </div>
+
+        <div class="footer-section social">
+          <h2>Follow Us</h2>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+        <div class="footer-bottom">
+        <p>&copy; 2024 Journey Joy. All rights reserved.</p>
+      </div>
+    </footer>
+	
+
+    <script src="transport.js">
+	// Handle transport form submission
+document.getElementById('transportForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const departureDate = document.getElementById('departure-date').value;
+    const returnDate = document.getElementById('return-date').value;
+    const passengers = document.getElementById('passengers').value;
+    const transportType = document.getElementById('transport-type').value;
+
+    // Display the search result message
+    const searchResult = `Searching for ${passengers} passengers, ${transportType} from ${departure} to ${destination} between ${departureDate} and ${returnDate}.`;
+    document.getElementById('searchResult').innerText = searchResult;
+
+    // Dynamically create transport options (in a real case, you'd fetch data from a server)
+    const transportOptions = [
+	    { type: 'Bicycle', company: 'RentalCycles', price: 50, duration: '1 day' },
+		{ type: 'van', company: 'RentalVehicles', price: 50, duration: '1 day' },
+        { type: 'Car', company: 'RentalCars', price: 50, duration: '1 day' },
+        { type: 'Bike', company: 'Express', price: 20, duration: '8h' },
+        { type: 'Taxi', company: 'QuickCabs', price: 100, duration: '3h' },
+    ];
+
+    let resultHTML = '';
+    transportOptions.forEach(option => {
+        if (option.type.toLowerCase() === transportType) {
+            resultHTML += `
+                <div class="option">
+                    <h3>${option.company} ${option.type}</h3>
+                    <p>Price: $${option.price}</p>
+                    <p>Duration: ${option.duration}</p>
+                    <button class="btn">Book Now</button>
+                </div>
+            `;
+        }
+    });
+
+    document.getElementById('results').innerHTML = resultHTML;
+});
+
+	</script>
+</body>
+</html>

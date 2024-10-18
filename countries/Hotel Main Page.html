@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotels Page</title>
+    <link rel="stylesheet" href="Hotels.css">
+</head>
+<body>
+
+     <!-- Header -->
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <h1>Journey Joy</h1>
+        </div>
+        <nav>
+          <ul class="nav-links">
+
+            <li><a href="#">Home</a></li>
+            <li><a href="resturant.html">Restaurant</a></li>
+            <li><a href="Main Page.html">Hotel</a></li>
+            <li><a href="Transport Page [html].html">Transport</a></li>
+            <li><a href="country.html">Countries</a></li>
+
+          </ul>
+        </nav>
+        <a href="#" class="cta-btn">Book Now</a>
+        <div class="menu-toggle" id="mobile-menu">
+          <i class="fa fa-bars"></i>
+        </div>
+      </div>
+    </header>
+
+
+    <div class="container">
+        <!-- Left Side -->
+        <div class="left-side">
+            <h2>Booking Details</h2>
+
+            <label for="checkin">Check-in Date:</label>
+            <input type="date" id="checkin" class="input-field">
+
+            <label for="checkout">Check-out Date:</label>
+            <input type="date" id="checkout" class="input-field">
+
+            <label for="guests">Guests:</label>
+            <input type="number" id="guests" min="1" value="1" class="input-field">
+
+            <button id="checkAvailability" class="action-btn">Check Availability</button>
+            <button id="updateBtn" class="action-btn">Update</button>
+            <button id="deleteBtn" class="action-btn delete">Delete</button>
+        </div>
+
+        <!-- Right Side -->
+        <div class="right-side">
+            <h2>Hotel Links</h2>
+
+            <a href="OceanResearchHotel.html" class="side-btn" target="_blank">Ocean Research Hotel</a>
+            <a href="Golden Earth Hotel .html" class="side-btn" target="_blank">Golden Earth Hotel</a>
+            <a href="Horizon Edge Hotel .html" class="side-btn" target="_blank">Horizon Edge Hotel</a>
+            <a href="North Heaven Hotel .html" class="side-btn" target="_blank">North Heaven Hotel</a>
+            <a href="paradise Hotel.html" class="side-btn" target="_blank">Paradise Hotel</a>
+        </div>
+    </div>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section about">
+          <h2>About Journey Joy</h2>
+          <p>
+            Discover new horizons, embrace thrilling experiences, and create
+            unforgettable memories with Journey Joy. Your next great escape
+            awaits—let’s explore the world together!
+          </p>
+        </div>
+
+        <div class="footer-section links">
+          <h2>Quick Links</h2>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="resturant.html">Restaurant</a></li>
+            <li><a href="Main Page.html">Hotel</a></li>
+            <li><a href="Transport Page [html].html">Transport</a></li>
+            <li><a href="country.html">Countries</a></li>
+ 
+          </ul>
+        </div>
+
+        <div class="footer-section contact">
+          <h2>Contact Us</h2>
+          <p>Email: info@journeyjoy.com</p>
+          <p>Phone: +123 123 7890</p>
+          <p>Address: 123 Kandy Road, Colombo</p>
+        </div>
+
+        <div class="footer-section social">
+          <h2>Follow Us</h2>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+        <div class="footer-bottom">
+        <p>&copy; 2024 Journey Joy. All rights reserved.</p>
+      </div>
+    </footer>
+	
+    <script src="script.js">
+	// Add event listeners for the buttons
+document.getElementById('checkAvailability').addEventListener('click', function() {
+    const checkin = document.getElementById('checkin').value;
+    const checkout = document.getElementById('checkout').value;
+    const guests = document.getElementById('guests').value;
+
+    if (!checkin || !checkout || guests <= 0) {
+        alert('Please fill in all fields correctly.');
+    } else {
+        alert(`Checking availability for ${guests} guests from ${checkin} to ${checkout}.`);
+    }
+});
+
+document.getElementById('updateBtn').addEventListener('click', function() {
+    alert('Update booking information.');
+});
+
+document.getElementById('deleteBtn').addEventListener('click', function() {
+    alert('Booking information deleted.');
+});
+
+	</script>
+</body>
+</html>
